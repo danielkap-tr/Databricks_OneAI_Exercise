@@ -1,0 +1,20 @@
+{
+  "name": "Compensation Pipeline - 2023 Road Closures",
+  "catalog": "workspace",
+  "schema": "default",
+  "serverless": true,
+  "photon": true,
+  "channel": "CURRENT",
+  "continuous": false,
+  "development": false,
+  "libraries": [
+    {
+      "glob": {
+        "include": "pipeline/**"
+      }
+    }
+  ],
+  "configuration": [],
+  "clusters": [],
+  "description": "\n    Tel Aviv Road Closures Compensation Pipeline\n    \n    Medallion Architecture (Bronze → Silver → Gold):\n    - Bronze: Raw data ingestion (CSV + API)\n    - Silver: Data cleaning and normalization\n    - Gold: Business metrics and compensation calculations\n    \n    Tables:\n    - road_comp_bronze_closures\n    - road_comp_bronze_businesses\n    - road_comp_silver_closures\n    - road_comp_silver_businesses\n    - road_comp_gold_annual_compensation (401 businesses)\n    - road_comp_gold_street_compensation (44 streets)\n    \n    Outputs:\n    - Total compensation: ₪88.6M for 2023\n    - Dashboard: 2023 Road Closures Compensation Dashboard\n    "
+}
